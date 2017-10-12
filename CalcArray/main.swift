@@ -99,4 +99,12 @@ func add (_ nums1:[String: Int], _ nums2: [String: Int]) -> [String: Int] {
     return results
 }
 
+func subtract (_ nums1:[String: Int], _ nums2: [String: Int]) -> [String: Int] {
+    var results : [String : Int] = [:]
+    if (nums1["x"] != nil && nums2["x"] != nil && nums1["y"] != nil && nums2["y"] != nil) {
+        results.updateValue(nums1["x"]! - nums2["x"]!, forKey:"x")
+        results.updateValue(nums1["y"]! - nums2["y"]!, forKey:"y")
+    }
+    return results
+}
 
