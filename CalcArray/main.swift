@@ -90,6 +90,14 @@ func subtract (_ nums1: (x: Int, y: Int), _ nums2: (x: Int, y: Int) ) -> (Int, I
     return (nums1.x - nums2.x, nums1.y - nums2.y)
 }
 
+func add (_ nums1: (x: Double, y: Double), _ nums2: (x: Double, y: Double)) -> (Double, Double) {
+    return (nums1.x + nums2.x, nums1.y + nums2.y)
+}
+
+func subtract (_ nums1: (x: Double, y: Double), _ nums2: (x: Double, y: Double)) -> (Double, Double) {
+    return (nums1.x - nums2.x, nums1.y - nums2.y)
+}
+
 func add (_ nums1:[String: Int], _ nums2: [String: Int]) -> [String: Int] {
     var results : [String : Int] = [:]
     if (nums1["x"] != nil && nums2["x"] != nil && nums1["y"] != nil && nums2["y"] != nil) {
@@ -101,6 +109,24 @@ func add (_ nums1:[String: Int], _ nums2: [String: Int]) -> [String: Int] {
 
 func subtract (_ nums1:[String: Int], _ nums2: [String: Int]) -> [String: Int] {
     var results : [String : Int] = [:]
+    if (nums1["x"] != nil && nums2["x"] != nil && nums1["y"] != nil && nums2["y"] != nil) {
+        results.updateValue(nums1["x"]! - nums2["x"]!, forKey:"x")
+        results.updateValue(nums1["y"]! - nums2["y"]!, forKey:"y")
+    }
+    return results
+}
+
+func add (_ nums1:[String: Double], _ nums2: [String: Double]) -> [String: Double] {
+    var results : [String : Double] = [:]
+    if (nums1["x"] != nil && nums2["x"] != nil && nums1["y"] != nil && nums2["y"] != nil) {
+        results.updateValue(nums1["x"]! + nums2["x"]!, forKey:"x")
+        results.updateValue(nums1["y"]! + nums2["y"]!, forKey:"y")
+    }
+    return results
+}
+
+func subtract (_ nums1:[String: Double], _ nums2: [String: Double]) -> [String: Double] {
+    var results : [String : Double] = [:]
     if (nums1["x"] != nil && nums2["x"] != nil && nums1["y"] != nil && nums2["y"] != nil) {
         results.updateValue(nums1["x"]! - nums2["x"]!, forKey:"x")
         results.updateValue(nums1["y"]! - nums2["y"]!, forKey:"y")
